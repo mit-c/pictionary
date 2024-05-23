@@ -1,7 +1,8 @@
 package org.main.game;
 
 import lombok.RequiredArgsConstructor;
-import org.main.drawing.DrawingEventRepository;
+import org.main.drawing.DrawingService;
+import org.main.lobby.LobbyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,10 +18,13 @@ public class GameController {
     GameRepository gameRepository;
 
     @Autowired
-    DrawingEventRepository drawingRepository;
+    DrawingService drawingService;
 
     @Autowired
     GameService gameService;
+
+    @Autowired
+    LobbyService lobbyService;
 
     @PutMapping("/new")
     @Transactional
@@ -40,6 +44,13 @@ public class GameController {
         return gameService.getGame(gameId)
                 .map(game -> ResponseEntity.ok(game.getActiveDrawing()))
                 .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping
+    @Transactional
+    public ResponseEntity<Void> deleteAll() {
+        gameService.deleteAll();
+        return ResponseEntity.ok().build();
     }
 
 }

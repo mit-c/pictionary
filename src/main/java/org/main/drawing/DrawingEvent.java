@@ -22,14 +22,14 @@ public class DrawingEvent {
 
     @Getter
     @Setter
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "drawingEvent")
     @Column(name = "points")
     private List<Point> points;
 
     @Getter
     @Setter
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="session_id", referencedColumnName = "session_id")
+    @JoinColumn
     private Drawing drawing;
 
 }

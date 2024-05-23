@@ -4,37 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1fc9781f-97d5-48f1-9aec-458d3ccfee19" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/AsyncConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/PictionaryApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/cors/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/drawing/Drawing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingEventRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/drawing/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/game/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/game/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/game/GameRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/game/GameService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/lobby/Lobby.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/lobby/LobbyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/lobby/LobbyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/lobby/LobbyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/lobby/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/main/lobby/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="1fc9781f-97d5-48f1-9aec-458d3ccfee19" name="Changes" comment="adding files again">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/drawing/Drawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/drawing/Drawing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingEventRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/game/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/game/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/game/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/game/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/lobby/LobbyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/lobby/LobbyService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,12 +33,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.PictionaryApplication">
     <configuration name="PictionaryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.main.PictionaryApplication" />
@@ -124,5 +103,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/main/drawing/DrawingService.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

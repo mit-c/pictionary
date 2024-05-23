@@ -21,12 +21,11 @@ public class Drawing {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Getter
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private UUID id;
 
     @Getter
     @Setter
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "drawing")
     private List<DrawingEvent> events;
 
     @Getter
@@ -36,7 +35,7 @@ public class Drawing {
 
     @Getter
     @Setter
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "drawing")
     @Column(name = "processed_points")
     private List<Point> processedPoints;
 }

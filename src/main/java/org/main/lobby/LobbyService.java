@@ -14,9 +14,6 @@ import static java.time.ZoneOffset.UTC;
 @Service
 public class LobbyService {
     @Autowired
-    GameRepository gameRepository;
-
-    @Autowired
     LobbyRepository lobbyRepository;
 
     public Lobby newLobby(Game game) {
@@ -120,5 +117,9 @@ public class LobbyService {
     public Optional<List<Message>> getAllMessages(UUID lobbyId) {
         Optional<Lobby> optionalLobby = lobbyRepository.findById(lobbyId);
         return optionalLobby.map(Lobby::getMessages);
+    }
+
+    public void deleteAll() {
+        lobbyRepository.deleteAll();
     }
 }

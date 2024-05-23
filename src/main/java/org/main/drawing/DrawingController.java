@@ -18,6 +18,7 @@ public class DrawingController {
 
     @PutMapping("/event")
     public ResponseEntity<UUID> addDrawingEvent(@PathVariable UUID roundId, @RequestBody ArrayList<Point> points) {
+        System.out.println(roundId);
         return drawingService.addEvent(roundId, points).map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -32,11 +33,10 @@ public class DrawingController {
     @GetMapping("/event/all/flat")
     @Transactional
     public ResponseEntity<List<Point>> getDrawingFlat(@PathVariable UUID roundId, @RequestParam Integer index) {
+        System.out.println(roundId);
         Optional<List<Point>> optionalPoints = drawingService.getAllPointsFlat(roundId);
-
         return optionalPoints
                 .map(points -> ResponseEntity.ok(points.subList(index, points.size())))
                 .orElseGet(() -> ResponseEntity.notFound().build());
-
     }
 }

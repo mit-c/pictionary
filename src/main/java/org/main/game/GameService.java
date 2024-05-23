@@ -1,12 +1,13 @@
 package org.main.game;
 
 import org.main.drawing.Drawing;
-import org.main.drawing.DrawingRepository;
 import org.main.drawing.DrawingService;
 import org.main.lobby.Lobby;
 import org.main.lobby.LobbyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -17,13 +18,10 @@ public class GameService {
     GameRepository gameRepository;
 
     @Autowired
-    DrawingService drawingService;
-
-    @Autowired
     LobbyService lobbyService;
 
     @Autowired
-    DrawingRepository drawingRepository;
+    DrawingService drawingService;
 
     public UUID newGame() {
 
@@ -54,5 +52,12 @@ public class GameService {
     public Optional<UUID> getRound(UUID gameId) {
         Optional<Game> optionalGame = gameRepository.findById(gameId);
         return optionalGame.map(Game::getActiveDrawing);
+    }
+
+    @Transactional
+    public void deleteAll() {
+        drawingService.deleteAll();
+        gameRepository.deleteAll();
+        lobbyService.deleteAll();
     }
 }

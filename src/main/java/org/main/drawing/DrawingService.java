@@ -5,7 +5,6 @@ import org.main.drawing.Drawing;
 import org.main.drawing.DrawingEvent;
 import org.main.game.Game;
 import org.main.drawing.Point;
-import org.main.drawing.DrawingEventRepository;
 import org.main.drawing.DrawingRepository;
 import org.main.game.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,23 +16,12 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 @Service
 public class DrawingService {
-    @Autowired
-    private DrawingEventRepository drawingEventRepository;
 
     @Autowired
     private DrawingRepository drawingRepository;
 
     @Autowired
     private GameRepository gameRepository;
-    @SneakyThrows
-    @Async
-    public CompletableFuture<Drawing> processEvents(Drawing originalDrawing) {
-        List<Point> processedEvents = originalDrawing.getEvents().stream()
-                .map(DrawingEvent::getPoints)
-                .flatMap(Collection::stream).toList();
-        originalDrawing.setProcessedPoints(new ArrayList<>(processedEvents));
-        return CompletableFuture.completedFuture(originalDrawing);
-    }
     public Drawing newRound(Game game) {
         Drawing drawing = Drawing.builder()
                         .events(new ArrayList<>())
@@ -57,7 +45,12 @@ public class DrawingService {
             point.setDrawingEvent(drawingEvent);
         }
         drawing.get().getEvents().add(drawingEvent);
-        processEvents(drawing.get()).thenAccept(processedDrawing -> drawingRepository.save(processedDrawing));
+        List<Point> processedEvents = drawing.get().getEvents().stream()
+                .map(DrawingEvent::getPoints)
+                .flatMap(Collection::stream).toList();
+        processedEvents.forEach(p -> p.setDrawing(drawing.get()));
+        drawing.get().setProcessedPoints(new ArrayList<>(processedEvents));
+        drawingRepository.save(drawing.get());
         return Optional.of(drawingEvent.getId());
     }
 
@@ -74,4 +67,7 @@ public class DrawingService {
 
     }
 
+    public void deleteAll() {
+        drawingRepository.deleteAll();
+    }
 }
